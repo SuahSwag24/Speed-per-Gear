@@ -1,8 +1,8 @@
 function Validation()
 {
     //Get values
-    var targetSpeed = document.getElementById("reqSpeed").value;
-    var baseSpeed = document.getElementById("baseSpeed").value;
+    var targetSpeed = parseFloat(document.getElementById("reqSpeed").value);
+    var baseSpeed = parseFloat(document.getElementById("baseSpeed").value);
 
     //Reset Errors
     document.getElementById("NaN").hidden = true;
@@ -16,7 +16,9 @@ function Validation()
         return;
     }
 
-    if((baseSpeed > targetSpeed) == true)
+    console.log(targetSpeed + " " + baseSpeed);
+
+    if(baseSpeed > targetSpeed)
     {
         document.getElementById("tooHigh").hidden = false;
         document.getElementById("reqSpeedOutput").innerHTML = "Error";
