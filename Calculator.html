@@ -1,0 +1,90 @@
+<!--HTML SECTION-->
+<html>
+    <head>
+        <title>Minimum Speed Per Gear</title>
+
+        <!--CSS SECTION-->
+        <style>
+            body
+            {
+                background-color:grey;
+            }
+
+            form, .result
+            {
+                margin:20px;
+                border:black 1px solid;
+                background-color: whitesmoke;
+                padding:20px;
+                border-radius: 7px;
+            }
+
+            button
+            {
+                padding:10px;
+                border:black solid 0.5px;
+                background-color:white;
+                cursor:pointer;
+            }
+
+            button:hover
+            {
+                opacity:80%;
+            }
+
+            #submit
+            {
+                background-color:lightgreen;
+            }
+
+            button[type="reset"]
+            {
+                background-color:orangered;
+            }
+
+            input[type="text"]
+            {
+                width:5em;
+                border:black 1px solid;
+            }
+        </style>
+    </head>
+
+    <script type="text/javascript" src = "script.js"></script>  
+
+    <body>
+        <form>
+            <h2>Speed Per Gear Calculator</h2>
+
+            <label for="baseSpeed">Base Speed: </label><br>
+            <input type="text" name="baseSpeed" id="baseSpeed" value="">
+            <br><br>
+
+            <label for="reqSpeed">Minimum Speed Required: </label><br>
+            <input type="text" name="reqSpeed" id="reqSpeed" value="">
+            <br><br>
+
+            <label for="gearSet">Speed Gear?: </label>
+            <input type="checkbox" name="gearSet" value="speedGear" id="gearSet">
+            <br>
+            
+            <label for="speedBoot">Speed Boot?: </label>
+            <input type="checkbox" name="speedBoot" value="speedBoot" id="speedBoot">
+            <br><br>
+
+            <button value="calc" id="submit" onclick="Validation()" type="button">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+        <hr>
+
+        <div class="result">
+            <!--Intended Output-->
+            <p>Minimum Substat Speed per Piece: <span id="reqSpeedOutput">0</span></p>
+
+            <!--Error Output-->
+            <p style="color:red;" hidden id="NaN">Value(s) inputted is not a number</p>
+            <p style="color:red;" hidden id="tooHigh">Base speed cannot be higher than the target speed</p>
+            <p style="color:red;" hidden id="empty">Empty value(s) detected</p>
+        </div>
+    </body>
+</html>
