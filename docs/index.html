@@ -56,6 +56,16 @@
                 position:absolute;
                 width:100%;
             }
+
+            .reforgedBox
+            {
+                display:none;
+            }
+            input[name='speedBoot']:checked ~ .reforgedBox
+            {
+                display: block;
+            }
+
         </style>
     </head>
 
@@ -79,7 +89,13 @@
             
             <label for="speedBoot">Speed Boot?: </label>
             <input type="checkbox" name="speedBoot" value="speedBoot" id="speedBoot">
-            <br><br>
+            <br>
+            
+            <div class="reforgedBox">
+                <label for="reforged">Reforged?: </label>
+                <input type="checkbox" name="reforged" value="true" id="reforged">
+            </div>
+            <br>
 
             <button value="calc" id="submit" onclick="Validation()" type="button">Submit</button>
             <button type="reset">Reset</button>

@@ -53,7 +53,10 @@ function Calculate()
 
     if(document.getElementById("speedBoot").checked)
     {
-        reqSpeed -= 45;
+        if(document.getElementById("reforged").checked)
+            reqSpeed -= 45;
+        else
+            reqSpeed -= 40;
 
         reqSpeed /= 5;
     }
